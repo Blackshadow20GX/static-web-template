@@ -52,6 +52,7 @@ function standard_suite(){
 //Helper function for performing all SEO suite tests
 function seo_suite(){
   console.log(declaration('Commencing SEO Suite'));
+  SEO_SUITE_ROBOTS.test_robots_txt(ROBOTS_PATH, success, failure);
   console.log(declaration('SEO Suite Complete!'));
 };
 
