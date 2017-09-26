@@ -44,6 +44,7 @@ function execute(){
 //Helper function for performing all standard suite tests
 function standard_suite(){
   console.log(declaration('Commencing Standard Suite'));
+  STANDARD_SUITE_HREF.test_pages_href(PAGES_PATH, success, failure);
   console.log(declaration('Standard Suite Complete!'));
 };
 
