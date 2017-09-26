@@ -53,6 +53,7 @@ function standard_suite(){
 function seo_suite(){
   console.log(declaration('Commencing SEO Suite'));
   SEO_SUITE_ROBOTS.test_robots_txt(ROBOTS_PATH, success, failure);
+  SEO_SUITE_META.test_pages_meta(PAGES_PATH, success, failure);
   console.log(declaration('SEO Suite Complete!'));
 };
 
