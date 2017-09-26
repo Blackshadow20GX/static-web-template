@@ -55,6 +55,7 @@ function seo_suite(){
   SEO_SUITE_ROBOTS.test_robots_txt(ROBOTS_PATH, success, failure);
   SEO_SUITE_META.test_pages_meta(PAGES_PATH, success, failure);
   SEO_SUITE_SITEMAP.test_sitemap_xml(SITEMAP_PATH, success, failure);
+  SEO_SUITE_FOUR_OH_FOUR.test_404_html(FOUR_OH_FOUR_PATH, success, failure);
   console.log(declaration('SEO Suite Complete!'));
 };
 
