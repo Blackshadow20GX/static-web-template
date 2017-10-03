@@ -18,7 +18,7 @@ module.exports = {
         var raw_urls = text.match(regex);
         if(raw_urls !== null) { //If match found, continue
           //Remove all hrefs from matched urls
-          urls = raw_urls.map(function (a){ 
+          var urls = raw_urls.map(function (a){ 
             return a.replace('href=', '');
           });
         }
