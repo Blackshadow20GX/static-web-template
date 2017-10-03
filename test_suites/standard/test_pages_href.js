@@ -16,19 +16,15 @@ module.exports = {
         const text = data.toString();
         var regex = /href="(?!.*?\.css)(.*?)"/g;
         var raw_urls = text.match(regex);
-        try {
+        if(raw_urls !== null) { //If match found, continue
           //Remove all hrefs from matched urls
           var urls = raw_urls.map(function (a){ 
             return a.replace('href=', '');
           });
-        }
-        //This is to catch files with no hrefs from crashing upon attempting a map
-        catch(err) {
-          console.log('No URLs matched in file ' + item); 
-        };
-  
-        //For each match, check existence of appropriate file
-        forEach(urls, function(item, index, arr){
+        
+
+          //For each match, check existence of appropriate file
+          forEach(urls, function(item, index, arr){
           //Parse into appropriate string
           var file_string = urls[index].toString().replace(/\"/g, '');
           var internal_path = "dist" + file_string + "/index.html";
@@ -44,6 +40,7 @@ module.exports = {
               });
           };
         });
+      }
       });
     });  
   console.log(success('test_pages_href'));
